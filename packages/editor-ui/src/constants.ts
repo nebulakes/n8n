@@ -197,6 +197,9 @@ export const SIMULATE_NODE_TYPE = 'n8n-nodes-base.simulate';
 export const SIMULATE_TRIGGER_NODE_TYPE = 'n8n-nodes-base.simulateTrigger';
 export const AI_TRANSFORM_NODE_TYPE = 'n8n-nodes-base.aiTransform';
 export const FORM_NODE_TYPE = 'n8n-nodes-base.form';
+export const SLACK_TRIGGER_NODE_TYPE = 'n8n-nodes-base.slackTrigger';
+export const TELEGRAM_TRIGGER_NODE_TYPE = 'n8n-nodes-base.telegramTrigger';
+export const FACEBOOK_LEAD_ADS_TRIGGER_NODE_TYPE = 'n8n-nodes-base.facebookLeadAdsTrigger';
 
 export const CREDENTIAL_ONLY_NODE_PREFIX = 'n8n-creds-base';
 export const CREDENTIAL_ONLY_HTTP_NODE_VERSION = 4.1;
@@ -230,6 +233,12 @@ export const OPEN_URL_PANEL_TRIGGER_NODE_TYPES = [
 	WEBHOOK_NODE_TYPE,
 	FORM_TRIGGER_NODE_TYPE,
 	CHAT_TRIGGER_NODE_TYPE,
+];
+
+export const SINGLE_WEBHOOK_TRIGGERS = [
+	TELEGRAM_TRIGGER_NODE_TYPE,
+	SLACK_TRIGGER_NODE_TYPE,
+	FACEBOOK_LEAD_ADS_TRIGGER_NODE_TYPE,
 ];
 
 export const LIST_LIKE_NODE_OPERATIONS = ['getAll', 'getMany', 'read', 'search'];
@@ -486,6 +495,9 @@ export const enum VIEWS {
 	COMMUNITY_NODES = 'CommunityNodes',
 	WORKFLOWS = 'WorkflowsView',
 	WORKFLOW_EXECUTIONS = 'WorkflowExecutions',
+	TEST_DEFINITION = 'TestDefinition',
+	TEST_DEFINITION_EDIT = 'TestDefinitionEdit',
+	NEW_TEST_DEFINITION = 'NewTestDefinition',
 	USAGE = 'Usage',
 	LOG_STREAMING_SETTINGS = 'LogStreamingSettingsView',
 	SSO_SETTINGS = 'SSoSettings',
@@ -582,6 +594,7 @@ export const enum MAIN_HEADER_TABS {
 	WORKFLOW = 'workflow',
 	EXECUTIONS = 'executions',
 	SETTINGS = 'settings',
+	TEST_DEFINITION = 'testDefinition',
 }
 export const CURL_IMPORT_NOT_SUPPORTED_PROTOCOLS = [
 	'ftp',
@@ -643,6 +656,7 @@ export const enum STORES {
 	ASSISTANT = 'assistant',
 	BECOME_TEMPLATE_CREATOR = 'becomeTemplateCreator',
 	PROJECTS = 'projects',
+	TEST_DEFINITION = 'testDefinition',
 }
 
 export const enum SignInType {
@@ -699,6 +713,8 @@ export const EXPERIMENTS_TO_TRACK = [
 	MORE_ONBOARDING_OPTIONS_EXPERIMENT.name,
 	CREDENTIAL_DOCS_EXPERIMENT.name,
 ];
+
+export const WORKFLOW_EVALUATION_EXPERIMENT = '025_workflow_evaluation';
 
 export const MFA_FORM = {
 	MFA_TOKEN: 'MFA_TOKEN',

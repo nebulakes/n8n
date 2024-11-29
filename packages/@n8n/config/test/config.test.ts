@@ -231,7 +231,6 @@ describe('GlobalConfig', () => {
 			port: 5679,
 			maxOldSpaceSize: '',
 			maxConcurrency: 5,
-			assertDeduplicationOutput: false,
 			taskTimeout: 60,
 			heartbeatInterval: 30,
 		},
@@ -283,7 +282,7 @@ describe('GlobalConfig', () => {
 			},
 		},
 		diagnostics: {
-			enabled: false,
+			enabled: true,
 			frontendConfig: '1zPn9bgWPzlQc0p8Gj1uiK6DOTn;https://telemetry.n8n.io',
 			backendConfig: '1zPn7YoGC3ZXE9zLeTKLuQCB4F6;https://telemetry.n8n.io',
 			posthogConfig: {

@@ -200,6 +200,7 @@ export interface IStartRunData {
 	startNodes?: StartNodeData[];
 	destinationNode?: string;
 	runData?: IRunData;
+	dirtyNodeNames?: string[];
 }
 
 export interface ITableData {
@@ -369,6 +370,7 @@ export interface IExecutionBase {
 	retryOf?: string;
 	retrySuccessId?: string;
 	startedAt: Date;
+	createdAt: Date;
 	stoppedAt?: Date;
 	workflowId?: string; // To be able to filter executions easily //
 }
@@ -1473,6 +1475,7 @@ export interface ExternalSecretsProvider {
 export type CloudUpdateLinkSourceType =
 	| 'advanced-permissions'
 	| 'canvas-nav'
+	| 'concurrency'
 	| 'custom-data-filter'
 	| 'workflow_sharing'
 	| 'credential_sharing'
@@ -1495,6 +1498,7 @@ export type CloudUpdateLinkSourceType =
 export type UTMCampaign =
 	| 'upgrade-custom-data-filter'
 	| 'upgrade-canvas-nav'
+	| 'upgrade-concurrency'
 	| 'upgrade-workflow-sharing'
 	| 'upgrade-credentials-sharing'
 	| 'upgrade-api'
