@@ -13,7 +13,10 @@ LABEL org.opencontainers.image.version=${N8N_VERSION}
 # Python 및 필요한 패키지 설치
 USER root
 RUN apk add --no-cache python3 py3-pip && \
-    pip3 install youtube_transcript_api
+    python3 -m venv /venv && \
+    source /venv/bin/activate && \
+    pip3 install youtube_transcript_api && \
+    deactivate
 
 ENV N8N_VERSION=${N8N_VERSION}
 ENV NODE_ENV=production
