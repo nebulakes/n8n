@@ -10,11 +10,11 @@ LABEL org.opencontainers.image.source="https://github.com/n8n-io/n8n"
 LABEL org.opencontainers.image.url="https://n8n.io"
 LABEL org.opencontainers.image.version=${N8N_VERSION}
 
-# Python 및 필요한 패키지 설치
+# Install Python and the necessary packages
 USER root
 RUN apk add --no-cache python3 py3-pip && \
     python3 -m venv /venv && \
-    source /venv/bin/activate && \
+    . /venv/bin/activate && \
     pip3 install youtube_transcript_api && \
     deactivate
 
