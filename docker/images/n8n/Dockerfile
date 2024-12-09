@@ -10,6 +10,14 @@ LABEL org.opencontainers.image.source="https://github.com/n8n-io/n8n"
 LABEL org.opencontainers.image.url="https://n8n.io"
 LABEL org.opencontainers.image.version=${N8N_VERSION}
 
+# Python 및 필요한 패키지 설치
+USER root
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    pip3 install youtube_transcript_api && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 ENV N8N_VERSION=${N8N_VERSION}
 ENV NODE_ENV=production
 ENV N8N_RELEASE_TYPE=stable
